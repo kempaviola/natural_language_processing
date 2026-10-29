@@ -81,8 +81,8 @@
   },
   "identity slices": {
     "all comments": {
-      "comments": 97320.0,
-      "toxic comments": 7777.0,
+      "comments": 97320,
+      "toxic comments": 7777,
       "FPR TF-IDF + LR": 0.047820600158583026,
       "FNR TF-IDF + LR": 0.4085122797994085,
       "FPR DistilBERT": 0.03123638922082128,
@@ -92,8 +92,8 @@
       "few toxic comments": false
     },
     "women": {
-      "comments": 2853.0,
-      "toxic comments": 376.0,
+      "comments": 2853,
+      "toxic comments": 376,
       "FPR TF-IDF + LR": 0.1102139685102947,
       "FNR TF-IDF + LR": 0.4122340425531915,
       "FPR DistilBERT": 0.045619701251513926,
@@ -103,8 +103,8 @@
       "few toxic comments": false
     },
     "men": {
-      "comments": 4151.0,
-      "toxic comments": 561.0,
+      "comments": 4151,
+      "toxic comments": 561,
       "FPR TF-IDF + LR": 0.11866295264623955,
       "FNR TF-IDF + LR": 0.3707664884135472,
       "FPR DistilBERT": 0.06323119777158774,
@@ -114,8 +114,8 @@
       "few toxic comments": false
     },
     "black": {
-      "comments": 1160.0,
-      "toxic comments": 282.0,
+      "comments": 1160,
+      "toxic comments": 282,
       "FPR TF-IDF + LR": 0.2722095671981777,
       "FNR TF-IDF + LR": 0.3049645390070922,
       "FPR DistilBERT": 0.11503416856492027,
@@ -125,8 +125,8 @@
       "few toxic comments": false
     },
     "white": {
-      "comments": 1997.0,
-      "toxic comments": 446.0,
+      "comments": 1997,
+      "toxic comments": 446,
       "FPR TF-IDF + LR": 0.29593810444874274,
       "FNR TF-IDF + LR": 0.25560538116591924,
       "FPR DistilBERT": 0.11992263056092843,
@@ -136,8 +136,8 @@
       "few toxic comments": false
     },
     "muslim": {
-      "comments": 1178.0,
-      "toxic comments": 251.0,
+      "comments": 1178,
+      "toxic comments": 251,
       "FPR TF-IDF + LR": 0.22330097087378642,
       "FNR TF-IDF + LR": 0.33864541832669326,
       "FPR DistilBERT": 0.09600862998921252,
@@ -147,8 +147,8 @@
       "few toxic comments": false
     },
     "jewish": {
-      "comments": 416.0,
-      "toxic comments": 69.0,
+      "comments": 416,
+      "toxic comments": 69,
       "FPR TF-IDF + LR": 0.14697406340057637,
       "FNR TF-IDF + LR": 0.33333333333333337,
       "FPR DistilBERT": 0.04899135446685879,
@@ -158,8 +158,8 @@
       "few toxic comments": true
     },
     "christian": {
-      "comments": 892.0,
-      "toxic comments": 135.0,
+      "comments": 892,
+      "toxic comments": 135,
       "FPR TF-IDF + LR": 0.10700132100396301,
       "FNR TF-IDF + LR": 0.37037037037037035,
       "FPR DistilBERT": 0.052840158520475564,
@@ -169,8 +169,8 @@
       "few toxic comments": false
     },
     "lgbtq": {
-      "comments": 628.0,
-      "toxic comments": 158.0,
+      "comments": 628,
+      "toxic comments": 158,
       "FPR TF-IDF + LR": 0.17872340425531916,
       "FNR TF-IDF + LR": 0.4620253164556962,
       "FPR DistilBERT": 0.1276595744680851,
