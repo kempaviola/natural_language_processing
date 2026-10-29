@@ -28,15 +28,30 @@ run; the prepared dataset takes about 650 MB in the Hugging Face cache.
 
 ## Results
 
-RESULTS_PLACEHOLDER
+Test set, 97,320 comments (7,777 toxic):
+
+| Model | Accuracy | Precision | Recall | F1 | PR-AUC | Precision at 80% recall |
+|---|---|---|---|---|---|---|
+| Always "non-toxic" | 0.920 | 0.000 | 0.000 | 0.000 | 0.080 | 0.080 |
+| TF-IDF + logistic regression | 0.923 | 0.518 | 0.591 | 0.552 | 0.588 | 0.292 |
+| **DistilBERT, fine-tuned** | **0.945** | **0.650** | **0.668** | **0.659** | **0.728** | **0.498** |
+
+H1 is supported: DistilBERT beats the baseline on every measure, with a bootstrap 95% interval for the F1 gap of
+0.098 to 0.115. H2 is also supported, and the fairness criterion fails. Harmless comments that mention black, white,
+Muslim or LGBTQ people are flagged 3 to 4 times as often as harmless comments in general, and DistilBERT scores
+harmless sentences like "I am a black person." above its threshold.
+
+Recommendation: use the model only to sort a moderation queue in a supervised pilot, never to remove comments
+automatically, and reduce the identity bias before any wider use.
 
 ## How to run
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/jupyter nbconvert --to notebook --execute --inplace nlp_capstone.ipynb
 ```
+
+Then open `nlp_capstone.ipynb` in Jupyter or VS Code, choose the `.venv` Python as the kernel and run all cells.
 
 The first run fine-tunes DistilBERT, which takes 40 to 50 minutes on an Apple M1 Pro, and saves it to
 `models/distilbert_toxicity/`. Later runs load the saved model. Delete that folder to train again. The model folder is

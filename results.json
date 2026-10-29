@@ -1,0 +1,313 @@
+{
+  "config": {
+    "seed": 42,
+    "dataset": "google/civil_comments",
+    "toxic label threshold": 0.5,
+    "train comments (sampled)": 50000,
+    "validation comments (sampled)": 10000,
+    "test comments": "full test split",
+    "TF-IDF C grid": [
+      1,
+      4,
+      16,
+      64
+    ],
+    "transformer": "distilbert-base-uncased",
+    "max tokens": 128,
+    "learning rate": 2e-05,
+    "batch size": 32,
+    "epochs": 2,
+    "weight decay": 0.01,
+    "warmup share of steps": 0.06,
+    "device": "mps"
+  },
+  "versions": {
+    "python": "3.10.7",
+    "datasets": "5.1.0",
+    "scikit-learn": "1.7.2",
+    "spacy": "3.8.18",
+    "torch": "2.14.1",
+    "transformers": "5.20.2"
+  },
+  "baseline C": 4,
+  "thresholds": {
+    "always non-toxic": 0.5,
+    "TF-IDF + LR": 0.4443667196753199,
+    "DistilBERT": 0.2890111804008484
+  },
+  "test metrics": {
+    "always non-toxic": {
+      "accuracy": 0.9200883682696259,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0,
+      "ROC-AUC": 0.5,
+      "PR-AUC": 0.07991163173037402,
+      "threshold": 0.5,
+      "precision at 80% recall": 0.07991163173037402
+    },
+    "TF-IDF + LR": {
+      "accuracy": 0.9233559391697492,
+      "precision": 0.5179013735645125,
+      "recall": 0.5914877202005915,
+      "F1": 0.5522540368569542,
+      "ROC-AUC": 0.897605890907964,
+      "PR-AUC": 0.5880864144394542,
+      "threshold": 0.4443667196753199,
+      "precision at 80% recall": 0.2919618976115621
+    },
+    "DistilBERT": {
+      "accuracy": 0.9447390053431977,
+      "precision": 0.6500688102089328,
+      "recall": 0.6681239552526681,
+      "F1": 0.6589727330374128,
+      "ROC-AUC": 0.9458849984545201,
+      "PR-AUC": 0.727900902959177,
+      "threshold": 0.2890111804008484,
+      "precision at 80% recall": 0.49752118982888216
+    }
+  },
+  "bootstrap 95% CI of DistilBERT minus TF-IDF + LR": {
+    "F1": {
+      "difference": 0.1067186961804586,
+      "2.5%": 0.0980485807021882,
+      "97.5%": 0.11491454920504163
+    },
+    "PR-AUC": {
+      "difference": 0.13981448851972278,
+      "2.5%": 0.13138559388754695,
+      "97.5%": 0.1483917379780667
+    }
+  },
+  "identity slices": {
+    "all comments": {
+      "comments": 97320.0,
+      "toxic comments": 7777.0,
+      "FPR TF-IDF + LR": 0.047820600158583026,
+      "FNR TF-IDF + LR": 0.4085122797994085,
+      "FPR DistilBERT": 0.03123638922082128,
+      "FNR DistilBERT": 0.3318760447473319,
+      "FPR ratio TF-IDF + LR": 1.0,
+      "FPR ratio DistilBERT": 1.0,
+      "few toxic comments": false
+    },
+    "women": {
+      "comments": 2853.0,
+      "toxic comments": 376.0,
+      "FPR TF-IDF + LR": 0.1102139685102947,
+      "FNR TF-IDF + LR": 0.4122340425531915,
+      "FPR DistilBERT": 0.045619701251513926,
+      "FNR DistilBERT": 0.4308510638297872,
+      "FPR ratio TF-IDF + LR": 2.3047382957303406,
+      "FPR ratio DistilBERT": 1.460466538850308,
+      "few toxic comments": false
+    },
+    "men": {
+      "comments": 4151.0,
+      "toxic comments": 561.0,
+      "FPR TF-IDF + LR": 0.11866295264623955,
+      "FNR TF-IDF + LR": 0.3707664884135472,
+      "FPR DistilBERT": 0.06323119777158774,
+      "FNR DistilBERT": 0.3796791443850267,
+      "FPR ratio TF-IDF + LR": 2.4814191426441448,
+      "FPR ratio DistilBERT": 2.024279993586443,
+      "few toxic comments": false
+    },
+    "black": {
+      "comments": 1160.0,
+      "toxic comments": 282.0,
+      "FPR TF-IDF + LR": 0.2722095671981777,
+      "FNR TF-IDF + LR": 0.3049645390070922,
+      "FPR DistilBERT": 0.11503416856492027,
+      "FNR DistilBERT": 0.46099290780141844,
+      "FPR ratio TF-IDF + LR": 5.692307630926302,
+      "FPR ratio DistilBERT": 3.6826973742612283,
+      "few toxic comments": false
+    },
+    "white": {
+      "comments": 1997.0,
+      "toxic comments": 446.0,
+      "FPR TF-IDF + LR": 0.29593810444874274,
+      "FNR TF-IDF + LR": 0.25560538116591924,
+      "FPR DistilBERT": 0.11992263056092843,
+      "FNR DistilBERT": 0.4013452914798207,
+      "FPR ratio TF-IDF + LR": 6.1885066993586575,
+      "FPR ratio DistilBERT": 3.8391963204566375,
+      "few toxic comments": false
+    },
+    "muslim": {
+      "comments": 1178.0,
+      "toxic comments": 251.0,
+      "FPR TF-IDF + LR": 0.22330097087378642,
+      "FNR TF-IDF + LR": 0.33864541832669326,
+      "FPR DistilBERT": 0.09600862998921252,
+      "FNR DistilBERT": 0.4661354581673307,
+      "FPR ratio TF-IDF + LR": 4.6695560100307,
+      "FPR ratio DistilBERT": 3.073614857033985,
+      "few toxic comments": false
+    },
+    "jewish": {
+      "comments": 416.0,
+      "toxic comments": 69.0,
+      "FPR TF-IDF + LR": 0.14697406340057637,
+      "FNR TF-IDF + LR": 0.33333333333333337,
+      "FPR DistilBERT": 0.04899135446685879,
+      "FNR DistilBERT": 0.46376811594202894,
+      "FPR ratio TF-IDF + LR": 3.0734466508822536,
+      "FPR ratio DistilBERT": 1.568406454424718,
+      "few toxic comments": true
+    },
+    "christian": {
+      "comments": 892.0,
+      "toxic comments": 135.0,
+      "FPR TF-IDF + LR": 0.10700132100396301,
+      "FNR TF-IDF + LR": 0.37037037037037035,
+      "FPR DistilBERT": 0.052840158520475564,
+      "FNR DistilBERT": 0.41481481481481486,
+      "FPR ratio TF-IDF + LR": 2.237557049663209,
+      "FPR ratio DistilBERT": 1.691621849981746,
+      "few toxic comments": false
+    },
+    "lgbtq": {
+      "comments": 628.0,
+      "toxic comments": 158.0,
+      "FPR TF-IDF + LR": 0.17872340425531916,
+      "FNR TF-IDF + LR": 0.4620253164556962,
+      "FPR DistilBERT": 0.1276595744680851,
+      "FNR DistilBERT": 0.36708860759493667,
+      "FPR ratio TF-IDF + LR": 3.73737267333817,
+      "FPR ratio DistilBERT": 4.0868864056473875,
+      "few toxic comments": false
+    }
+  },
+  "template test mean scores": {
+    "young": {
+      "TF-IDF + LR": 0.11130197359561889,
+      "DistilBERT": 0.0021130468230694532
+    },
+    "christian": {
+      "TF-IDF + LR": 0.26332008330599815,
+      "DistilBERT": 0.003085554577410221
+    },
+    "old": {
+      "TF-IDF + LR": 0.10771506552341685,
+      "DistilBERT": 0.0035910054575651884
+    },
+    "american": {
+      "TF-IDF + LR": 0.17067059606316223,
+      "DistilBERT": 0.003847257699817419
+    },
+    "asian": {
+      "TF-IDF + LR": 0.12456862134564198,
+      "DistilBERT": 0.006116256583482027
+    },
+    "straight": {
+      "TF-IDF + LR": 0.13963614063821567,
+      "DistilBERT": 0.008993975818157196
+    },
+    "jewish": {
+      "TF-IDF + LR": 0.22340651159520772,
+      "DistilBERT": 0.009429740719497204
+    },
+    "atheist": {
+      "TF-IDF + LR": 0.13057268721253826,
+      "DistilBERT": 0.018868453800678253
+    },
+    "muslim": {
+      "TF-IDF + LR": 0.5086529529062518,
+      "DistilBERT": 0.04170282930135727
+    },
+    "lesbian": {
+      "TF-IDF + LR": 0.16488537914159787,
+      "DistilBERT": 0.04404158890247345
+    },
+    "transgender": {
+      "TF-IDF + LR": 0.09759740277619956,
+      "DistilBERT": 0.11087267845869064
+    },
+    "white": {
+      "TF-IDF + LR": 0.5660810010478842,
+      "DistilBERT": 0.31964772939682007
+    },
+    "gay": {
+      "TF-IDF + LR": 0.6689132893372335,
+      "DistilBERT": 0.37282171845436096
+    },
+    "black": {
+      "TF-IDF + LR": 0.6777401315268806,
+      "DistilBERT": 0.6010522246360779
+    }
+  },
+  "harmless template sentences flagged": {
+    "TF-IDF + LR": 14,
+    "DistilBERT": 7
+  },
+  "expected calibration error": {
+    "TF-IDF + LR": 0.08652071882633401,
+    "DistilBERT": 0.024238708154991212,
+    "DistilBERT, temperature 1.32": 0.009760922516982863
+  },
+  "temperature": 1.3162679638092678,
+  "error categories": {
+    "clear insult the model missed": {
+      "FN": 2,
+      "FP": 0,
+      "total": 2
+    },
+    "identity mention": {
+      "FN": 4,
+      "FP": 2,
+      "total": 6
+    },
+    "indirect insult, no rude words": {
+      "FN": 7,
+      "FP": 0,
+      "total": 7
+    },
+    "insult the label calls harmless": {
+      "FN": 0,
+      "FP": 9,
+      "total": 9
+    },
+    "label unclear": {
+      "FN": 5,
+      "FP": 0,
+      "total": 5
+    },
+    "profanity not aimed at anyone": {
+      "FN": 0,
+      "FP": 1,
+      "total": 1
+    },
+    "sarcasm or quote": {
+      "FN": 2,
+      "FP": 3,
+      "total": 5
+    },
+    "sexual content": {
+      "FN": 4,
+      "FP": 0,
+      "total": 4
+    },
+    "strong words, no personal attack": {
+      "FN": 0,
+      "FP": 10,
+      "total": 10
+    },
+    "toxic part after token 128": {
+      "FN": 1,
+      "FP": 0,
+      "total": 1
+    },
+    "total": {
+      "FN": 25,
+      "FP": 25,
+      "total": 50
+    }
+  },
+  "training": {
+    "runtime minutes": 51.402885,
+    "best step": 3108,
+    "best validation PR-AUC": 0.7472771724362589
+  }
+}
